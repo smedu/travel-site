@@ -14,12 +14,13 @@ class StickyHeader {
     this.addSmoothScrolling();
     this.refreshWaypoints();
   }
-
-  refreshWaypoints() {
-    this.lazyImages.load(function() {
-      Waypoint.refreshAll();
-    });
-  }
+  
+	refreshWaypoints(){
+		this.lazyImages.on('load', function(){
+		  Waypoint.refreshAll();
+		});
+	}
+  
 
   addSmoothScrolling() {
     this.headerLinks.smoothScroll();
